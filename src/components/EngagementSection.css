@@ -1,0 +1,65 @@
+/* ============================================================
+   ENGAGEMENT MODELS
+   ============================================================ */
+.engagement__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.engagement__card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.5s ease, transform 0.5s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+.engagement--visible .engagement__card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.engagement__card:hover {
+  background: rgba(30,110,219,0.12);
+  border-color: rgba(30,110,219,0.25);
+  transform: translateY(-2px) !important;
+}
+
+.engagement__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(30,110,219,0.15);
+  color: var(--blue-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.engagement__title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.engagement__desc {
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.58);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.engagement__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+@media (max-width: 900px) { .engagement__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .engagement__grid { grid-template-columns: 1fr; } }
