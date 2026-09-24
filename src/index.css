@@ -49,8 +49,10 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 120px;
+  scroll-padding-top: 100px;
   font-size: 16px;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -60,6 +62,8 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 img {
@@ -530,24 +534,35 @@ hr {
 }
 
 @media (max-width: 768px) {
-  .section { padding: 64px 0; }
-  .grid-2 { grid-template-columns: 1fr; }
-  .grid-3 { grid-template-columns: 1fr; }
-  .grid-4 { grid-template-columns: 1fr 1fr; }
-  .grid-6 { grid-template-columns: repeat(2, 1fr); }
+  .section { padding: 56px 0; }
+  .grid-2 { grid-template-columns: 1fr; gap: 28px; }
+  .grid-3 { grid-template-columns: 1fr; gap: 24px; }
+  .grid-4 { grid-template-columns: 1fr; gap: 20px; }
+  .grid-6 { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .container { padding: 0 16px; }
-  .section-title { font-size: 1.6rem; }
-  .section-header { margin-bottom: 36px; }
+  .section-title { font-size: 1.5rem; }
+  .section-header { margin-bottom: 32px; }
+  .card { padding: 24px 18px; border-radius: var(--radius-md); }
+  .btn { padding: 11px 20px; font-size: 0.88rem; }
+  .btn--lg { padding: 13px 24px; font-size: 0.92rem; }
 }
 
 @media (max-width: 480px) {
-  .grid-4 { grid-template-columns: 1fr; }
-  .grid-6 { grid-template-columns: 1fr 1fr; }
+  .section { padding: 44px 0; }
+  .grid-6 { grid-template-columns: 1fr; }
+  .container { padding: 0 14px; }
+  .section-title { font-size: 1.35rem; }
+  .section-subtitle { font-size: 0.92rem; }
+  .card { padding: 20px 14px; }
 }
 
 /* RTL Support */
 [dir="rtl"] {
-  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+[dir="rtl"] .section-eyebrow {
+  flex-direction: row-reverse;
 }
 
 [dir="rtl"] .section-eyebrow::before {
@@ -561,4 +576,8 @@ hr {
   height: 2px;
   background: var(--blue-accent);
   border-radius: 2px;
+}
+
+[dir="rtl"] .section-eyebrow--center::after {
+  display: none;
 }

@@ -97,10 +97,16 @@
 @media (max-width: 640px) {
   .methodology__steps {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 16px;
+  }
+  .methodology__step {
+    padding: 16px 10px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 440px) {
   .methodology__steps { grid-template-columns: 1fr; }
 }

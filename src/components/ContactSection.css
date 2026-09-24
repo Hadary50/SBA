@@ -277,12 +277,26 @@
 
 /* Responsive */
 @media (max-width: 900px) {
-  .contact__inner { grid-template-columns: 1fr; gap: 32px; }
-  .cta-banner__inner { flex-direction: column; text-align: center; }
+  .cta-banner { padding: 64px 0; }
+  .contact__inner { grid-template-columns: 1fr; gap: 40px; padding-top: 40px; padding-bottom: 60px; }
+  .cta-banner__inner { flex-direction: column; text-align: center; gap: 24px; }
   .cta-banner__actions { justify-content: center; }
+  .contact__form-wrap { padding: 36px 28px; }
 }
 
 @media (max-width: 560px) {
-  .form-row { grid-template-columns: 1fr; }
-  .contact__form-wrap { padding: 24px 16px; }
+  .cta-banner { padding: 48px 0; }
+  .cta-banner__actions { flex-direction: column; width: 100%; }
+  .cta-banner__actions .btn { width: 100%; justify-content: center; }
+  .form-row { grid-template-columns: 1fr; gap: 16px; }
+  .contact__form-wrap { padding: 24px 16px; border-radius: var(--radius-lg); }
+  .contact__channel { padding: 12px 14px; }
+  .contact__person { padding: 12px 14px; }
+}
+
+/* RTL Support */
+[dir="rtl"] .form-select {
+  background-position: left 14px center;
+  padding-right: 14px;
+  padding-left: 36px;
 }

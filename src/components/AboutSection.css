@@ -137,6 +137,39 @@
 @media (max-width: 900px) {
   .about__inner {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 36px;
   }
+  .about__journey {
+    padding: 32px 24px;
+    border-radius: var(--radius-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .about__journey {
+    padding: 24px 16px;
+  }
+  .about__lead {
+    font-size: 1rem;
+  }
+  .about__body {
+    font-size: 0.9rem;
+  }
+  .about__pillars {
+    gap: 10px;
+    padding-top: 20px;
+  }
+  .about__pillar {
+    font-size: 0.8rem;
+  }
+}
+
+/* RTL Support */
+[dir="rtl"] .about__step {
+  direction: rtl;
+}
+
+[dir="rtl"] .about__step-label,
+[dir="rtl"] .about__step-desc {
+  text-align: right;
 }

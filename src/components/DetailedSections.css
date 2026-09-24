@@ -423,7 +423,7 @@
 }
 
 /* ============================================================
-   RESPONSIVE
+   RESPONSIVE & RTL
    ============================================================ */
 @media (max-width: 1024px) {
   .ds-inner { grid-template-columns: 1fr; gap: 36px; }
@@ -435,17 +435,54 @@
 }
 
 @media (max-width: 768px) {
+  .ds-card { padding: 24px 18px; }
+  .tenant__lifecycle,
+  .tenant__ticketing { padding: 20px 16px; border-radius: var(--radius-md); }
   .tenant__docs { grid-template-columns: repeat(2, 1fr); }
   .tenant__gov { grid-template-columns: 1fr; }
   .sops__categories { grid-template-columns: repeat(2, 1fr); }
   .preopening__grid { grid-template-columns: repeat(2, 1fr); }
   .reporting__items { grid-template-columns: 1fr 1fr; }
+  .reporting__flow {
+    flex-direction: column;
+    padding: 20px 16px;
+    gap: 10px;
+  }
+  .reporting__flow svg {
+    transform: rotate(90deg);
+  }
+  .reporting__flow-box {
+    width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
+  .ds-card { padding: 20px 14px; }
   .tenant__docs { grid-template-columns: 1fr; }
   .sops__categories { grid-template-columns: 1fr; }
   .preopening__grid { grid-template-columns: 1fr; }
   .reporting__items { grid-template-columns: 1fr; }
-  .ds-flow { gap: 6px; }
+  .ds-flow { gap: 6px; justify-content: center; }
+  .ds-flow__item { flex-direction: row; flex-wrap: wrap; }
+  .ds-flow__label { font-size: 0.73rem; padding: 5px 10px; }
+  .ds-item { padding: 6px 8px; font-size: 0.82rem; }
+}
+
+/* RTL Support */
+[dir="rtl"] .ds-flow {
+  direction: rtl;
+}
+
+[dir="rtl"] .ds-flow__arrow {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .reporting__flow svg {
+  transform: scaleX(-1);
+}
+
+@media (max-width: 768px) {
+  [dir="rtl"] .reporting__flow svg {
+    transform: rotate(90deg);
+  }
 }
