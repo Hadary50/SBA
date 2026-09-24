@@ -110,13 +110,6 @@ export default function Navbar({ lang, setLang }) {
 
         {/* Right actions */}
         <div className="navbar__actions">
-          <button
-            className="navbar__lang"
-            onClick={() => setLang(lang === 'en' ? 'ar' : 'en')}
-            aria-label="Toggle language"
-          >
-            {lang === 'en' ? 'AR' : 'EN'}
-          </button>
           <a
             href="#contact"
             className="btn btn--primary navbar__cta"
